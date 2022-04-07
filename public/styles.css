@@ -1,0 +1,39 @@
+:root {
+    --primary-color: #AAD5D5;
+    --secondary-color: #AABFD5;
+    --terziary-color: #C6D4E3;
+    --background-color-grid: #E2E9F1;
+    --background-color-grid: #E2E9F1;
+}
+
+* {
+    box-sizing: 0;
+}
+
+body {
+    margin: 0;
+    background-color: var(--terziary-color);
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 3fr repeat(3, 1fr) 2fr 3fr;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--secondary-color);
+    border-radius: 20px;
+    background-color: var(--background-color-grid);
+    color: rgb(61, 61, 61);
+}
