@@ -5,11 +5,117 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Documentation</title>
 </head>
 
-<body>
-    Documentation page
+
+<body class="container text-center">
+    <h2 class="header">Documentation</h2>
+    <h3>Here you can find information on how to utilize the API</h3>
+
+    <section class="text-center">
+
+        <!-- HEADER -->
+        <div class="grid bold dark">
+            <p>Logic</p>
+            <p>URL</p>
+            <p>HTTP Method</p>
+            <p>Query Params</p>
+            <p>Request Data Body Format</p>
+            <p>Response Data Body Format</p>
+        </div>
+
+        <!-- 1 -->
+        <div class="grid">
+            <p>Return a list of ALL movies to the user</p>
+            <p>/movies</p>
+            <p>GET</p>
+            <p>None</p>
+            <p>None</p>
+            <p>JSON object holding data about all the movies: <br>Array of: { "title": "Title of the movie", "director": "Name of the director", "genre": "Genre of the movie" }
+            </p>
+        </div>
+
+        <!-- 2 -->
+        <div class="grid">
+            <p>Return data about a single movie by title to the user</p>
+            <p>/movies/:title</p>
+            <p>GET</p>
+            <p>None</p>
+            <p>None</p>
+            <p>JSON object holding data about a specific movie: <br>{ "title": "Title of the movie", "director": "Name of the director", "genre": "Genre of the movie" }</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="grid">
+            <p>Return data about a genre by name/title</p>
+            <p>/movies/genre/:genreName</p>
+            <p>GET</p>
+            <p>None</p>
+            <p>None</p>
+            <p>JSON value referring to the genre of a specific movie</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="grid">
+            <p>Return data about a director by name</p>
+            <p>/movies/directors/:directorName</p>
+            <p>GET</p>
+            <p>None</p>
+            <p>None</p>
+            <p>JSON object holding information about the director<br>{ "bio": "description", "birthday": "day of birth", "deathyear": "Year of death" (undefined if still alive) }</p>
+        </div>
+
+        <!-- 5 -->
+        <div class="grid">
+            <p>Allow new users to register</p>
+            <p>/users</p>
+            <p>POST</p>
+            <p>None</p>
+            <p>JSON object to register. <br>{ "name": "name of the user" }</p>
+            <p>JSON object sent with request plus and additional random unique ID value recorded</p>
+        </div>
+
+        <!-- 6 -->
+        <div class="grid">
+            <p>Allow users to update their user info</p>
+            <p>/users/:id</p>
+            <p>PUT</p>
+            <p>None</p>
+            <p>None</p>
+            <p>A text message indicating success</p>
+        </div>
+
+        <div class="grid">
+            <p>Allow users to add a movie to their list of favorites</p>
+            <p>/users/:id/:movieTitle</p>
+            <p>POST</p>
+            <p>None</p>
+            <p>JSON object holding information about the movie to add to the favourite list<br> { "title": "Title of the movie", "director": "Name of the director", "genre": "Genre of the movie" }</p>
+            <p>A text message indicating success</p>
+        </div>
+
+        <div class="grid">
+            <p>Allow users to remove a movie from their list of favorites</p>
+            <p>/users/:id/:movieTitle</p>
+            <p>DELETE</p>
+            <p>None</p>
+            <p>None</p>
+            <p>A text message indicating success</p>
+        </div>
+
+        <div class="grid">
+            <p>Allow existing users to deregister</p>
+            <p>/users/:id</p>
+            <p>DELETE</p>
+            <p>None</p>
+            <p>None</p>
+            <p>A text message indicating success</p>
+        </div>
+
+    </section>
+
 </body>
 
 </html>
