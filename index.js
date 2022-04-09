@@ -27,16 +27,19 @@ let users = [
 
 let movies = [
     {
-        title: 'Shawshank Redemption',
-        year: '1994',
-        director: 'Frank Darabont',
-        genre: 'Drama'
+        Title: 'Shawshank Redemption',
+        Year: '1994',
+        Director: {
+          Name: 'Frank Darabont',
+          Birth: '1959'
+        },
+        Genre: 'Drama'
     },
     {
-        title: 'The Godfather',
-        year: '1972',
-        director: 'Francis Coppola',
-        genre: 'Drama'
+        Title: 'The Godfather',
+        Year: '1972',
+        Director: 'Francis Coppola',
+        Genre: 'Drama'
     }
 ];
 
@@ -140,7 +143,7 @@ app.get('/movies/:title', (req, res) => {
 // Return data about a genre by name/title
 app.get('/movies/genre/:genreName', (req, res) => {
   const { genreName } = req.params;
-  const genre = movies.find( movie => movie.Genre.Name === genreName ).Genre;
+  const genre = movies.find( movie => movie.Genre === genreName ).Genre;
 
   if(genre) {
     res.status(200).json(genre);
