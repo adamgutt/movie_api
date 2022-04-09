@@ -38,7 +38,10 @@ let movies = [
     {
         Title: 'The Godfather',
         Year: '1972',
-        Director: 'Francis Coppola',
+        Director: {
+          Name: 'Francis Coppola',
+          Birth: '1939'
+        },
         Genre: 'Drama'
     }
 ];
