@@ -17,6 +17,11 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+let auth = require('./auth')(app);
+
+const passport = require('passport');
+require('./passport');
+
 app.use(morgan('common'));
 
 app.use(express.static('public'));
@@ -202,7 +207,7 @@ app.delete('/users/:Username', (req, res) => {
 
 // READ
 // Return a list of ALL movies to the user
-app.get('/movies', (req, res) => {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find().then((movies) => {
     res.status(200).json(movies);
   }).catch((err) => {
