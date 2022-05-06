@@ -78,6 +78,10 @@ let movies = [
     }
 ];
 
+app.get('/', (req, res) => {
+  res.send('Welcome to my myFlix app! You\'ll find my top 10 movies here :D');
+});
+
 // CREATE
 //Add a user
 /* We’ll expect JSON in this format
