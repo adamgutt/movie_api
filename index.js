@@ -19,6 +19,7 @@ const app = express();
 app.use(bodyParser.json());
 
 
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const cors = require('cors');
@@ -194,6 +195,22 @@ app.put('/users/:Username', passport.authenticate('jwt', { session: false }), (r
       }
     });
 });
+
+app.get('/users/:Username/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+  Users.findOne({ Username: req.params.Username })
+    .then((user) => {
+      if (user) { // If a user with the corresponding username was found, return user info
+        res.status(200).json(user.FavoriteMovies);
+      } else {
+        res.status(400).send('Could not find favorite movies for this user');
+      };
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+});
+
 
 // CREATE
 // Add a movie to a user's list of favorites
