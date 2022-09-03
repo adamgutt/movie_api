@@ -18,11 +18,8 @@ const app = express();
 
 app.use(bodyParser.json());
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc7386891a7f7f34ed84dc076284fab30e9befd5
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const cors = require('cors');
