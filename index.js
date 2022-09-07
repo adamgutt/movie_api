@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const cors = require('cors');
-let allowedOrigins = ['http://localhost:1234', 'http://localhost:4200', 'https://adamsmyflix.netlify.app/'];
+let allowedOrigins = ['http://localhost:1234', 'http://localhost:4200', 'https://adamsmyflix.netlify.app/, https://willowy-sorbet-614005.netlify.app/'];
 
 app.use(cors({
   origin: (origin, callback) => {
