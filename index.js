@@ -90,6 +90,7 @@ let movies = [
     Genre: 'Drama'
   }
 ];
+app.options('*', cors())
 
 app.get('/', (req, res) => {
   res.send('Welcome to my myFlix app! You\'ll find my top 10 movies here :D');
